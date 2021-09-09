@@ -6,17 +6,11 @@
  * This kit includes:
  *  - Arduino UNO R3 Clone
  *  - L298N Motor Driver Module
- *  - Ultrasonic Sensor
- *  - Servo
- *  - IR Remote receiver
- *  - ??? Shield
+ *  - HC-SR04 Ultrasonic Sensor Module
+ *  - SG90 Servo
+ *  - IR Receiver Module
+ *  - Sensor Shield V5.0
  *  - Regulated battery pack
- * 
- * May include sources from the following libraries, so is intended for
- * private use:
- *  - IRRemote
- *  - L298N
- *  - Others
  */
 
 #ifndef REMOTE_H

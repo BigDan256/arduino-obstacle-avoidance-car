@@ -36,4 +36,8 @@ void Wheel::setBackwards(void) {
   //TODO
 }
 
+void Wheel::setSpeed(int) {
+  //TODO
+}
+
 } // /namespace

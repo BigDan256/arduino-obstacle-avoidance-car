@@ -39,7 +39,7 @@ public:
 
   void setBackwards(void);
 
-  void setSpeed(void);
+  void setSpeed(int);
 
 private:
 

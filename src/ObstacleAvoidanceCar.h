@@ -30,12 +30,18 @@ public:
 
   ObstacleAvoidanceCar() {};
 
+
+
   /*!
    * @brief TODO
    *
    * @return true if successful
    */
   bool begin(void);
+
+
+
+  ObstacleAvoidanceCarParts::Remote remote;
 
   /*!
    * @brief TODO
@@ -45,11 +51,39 @@ public:
   bool beginRemote(int signalPin);
 
   /*!
+   * @brief Fetch the most recent remote key
+   */
+  int getRemoteKey(void);
+
+
+
+  ObstacleAvoidanceCarParts::Servo servo;
+
+  /*!
    * @brief TODO
    *
    * @return true if successful
    */
   bool beginServo(int pulsePin);
+
+  /*!
+   * @brief Look to the left
+   */
+  void lookLeft(void);
+
+  /*!
+   * @brief Look to the right
+   */
+  void lookRight(void);
+
+  /*!
+   * @brief Look straight ahead
+   */
+  void lookStraight(void);
+
+
+
+  ObstacleAvoidanceCarParts::Ultrasonic ultrasonic;
 
   /*!
    * @brief TODO
@@ -59,6 +93,15 @@ public:
   bool beginUltrasonic(int triggerPin, int echoPin);
 
   /*!
+   * @brief Measure the distance
+   */
+  float getDistanceCM(void);
+
+
+
+  ObstacleAvoidanceCarParts::Wheel leftWheel, rightWheel;
+
+  /*!
    * @brief TODO
    *
    * @return true if successful
@@ -66,39 +109,50 @@ public:
   bool beginWheels(int enAPin, int in1Pin, int in2Pin, int in3Pin, int in4Pin, int enBPin);
 
   /*!
+   * @brief Start the motors moving
+   */
+  void move(void);
+  void move(int time);
+  void move(int time, int speed);
+
+  /*!
    * @brief Start the motors moving forwards
    */
   void moveForwards(void);
+  void moveForwards(int time);
+  void moveForwards(int time, int speed);
 
   /*!
    * @brief Start the motors moving backwards
    */
   void moveBackwards(void);
+  void moveBackwards(int time);
+  void moveBackwards(int time, int speed);
 
   /*!
    * @brief Start the motors turning left on the spot
    */
   void turnLeft(void);
+  void turnLeft(int time);
+  void turnLeft(int time, int speed);
 
   /*!
    * @brief Start the motors turning right on the spot
    */
   void turnRight(void);
+  void turnRight(int time);
+  void turnRight(int time, int speed);
 
-  /*!
-   * @brief Stop the motors moving
-   */
-  void stopMoving(void);
+  void setSpeed(int speed);
+  void setTimeStep(int time);
 
-  ObstacleAvoidanceCarParts::Remote remote;
 
-  ObstacleAvoidanceCarParts::Servo servo;
-
-  ObstacleAvoidanceCarParts::Ultrasonic ultrasonic;
-
-  ObstacleAvoidanceCarParts::Wheel leftWheel, rightWheel;
 
 private:
+
+  int timeStep = 500;
+
+  int wheelSpeed = 127;
 
 };
 

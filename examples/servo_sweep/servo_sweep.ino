@@ -1,6 +1,7 @@
 #include <Arduino.h>
 #include <ObstacleAvoidanceCar.h>
 
+// Servo Module pins
 const int pulsePin = 3;
 
 ObstacleAvoidanceCar car;  // create car object to control a servo

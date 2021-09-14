@@ -54,6 +54,9 @@ private:
   uint8_t triggerPin;
   uint8_t echoPin;
 
+  unsigned long buffer[16] = {0.0f};
+  unsigned long sum       = 0.0f;
+  int           ptr       = 0;
 };
 
 } // /namespace

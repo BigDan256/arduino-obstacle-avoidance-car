@@ -1,6 +1,8 @@
 #include <Arduino.h>
 #include <ObstacleAvoidanceCar.h>
 
+using ObstacleAvoidanceCarParts::Remote;
+
 // Infrared Remote pins
 const int signalPin = 12;
 
@@ -14,74 +16,75 @@ const int enBPin = 10;
 
 ObstacleAvoidanceCar car;  // create car object to control a servo
 
-int turnSpeed = 127;
-int moveSpeed = 127;
+int turnTime = 500;
+int moveTime = 500;
 
 void dragon(int depth); // The movement pattern
 
 void setup() {
   car.beginRemote(signalPin);
   car.beginWheels(enAPin, in1Pin, in2Pin, in3Pin, in4Pin, enBPin);
+  car.setSpeed(255);
 }
 
 void loop() {
   switch (car.getRemoteKey()) {
 
-  case 0x00: dragon(0); break;
-  case 0x01: dragon(1); break;
-  case 0x02: dragon(2); break;
-  case 0x03: dragon(3); break;
-  case 0x04: dragon(4); break;
-  case 0x05: dragon(5); break;
-  case 0x06: dragon(6); break;
-  case 0x07: dragon(7); break;
-  case 0x08: dragon(8); break;
-  case 0x09: dragon(9); break;
+  case Remote::KEY_0: dragon(0); break;
+  case Remote::KEY_1: dragon(1); break;
+  case Remote::KEY_2: dragon(2); break;
+  case Remote::KEY_3: dragon(3); break;
+  case Remote::KEY_4: dragon(4); break;
+  case Remote::KEY_5: dragon(5); break;
+  case Remote::KEY_6: dragon(6); break;
+  case Remote::KEY_7: dragon(7); break;
+  case Remote::KEY_8: dragon(8); break;
+  case Remote::KEY_9: dragon(9); break;
 
-  case 0x0A:
-    turnSpeed = (turnSpeed - 2) & 0x7f;
-    car.turnLeft(2000, turnSpeed);
+  case Remote::KEY_LEFT:
+    turnTime = (turnTime - 10) & 0x7ff;
+    car.turnLeft(turnTime);
     break;
-  case 0x0B:
-    turnSpeed = (turnSpeed + 2) & 0x7f;
-    car.turnRight(2000, turnSpeed);
+  case Remote::KEY_RIGHT:
+    turnTime = (turnTime + 10) & 0x7ff;
+    car.turnRight(turnTime);
     break;
-  case 0x0C:
-    moveSpeed = (moveSpeed + 2) & 0x7f;
-    car.moveForwards();
+  case Remote::KEY_UP:
+    moveTime = (moveTime + 10) & 0x7ff;
+    car.moveForwards(moveTime);
     break;
-  case 0x0D:
-    moveSpeed = (moveSpeed - 2) & 0x7f;
-    car.moveBackwards();
+  case Remote::KEY_DOWN:
+    moveTime = (moveTime - 10) & 0x7ff;
+    car.moveBackwards(moveTime);
     break;
 
   default:
+    break;
   }
 }
 
 void dragonL(int depth) {
     if (0 == depth) {
-        car.moveForwards(500, moveSpeed);
+        car.moveForwards(moveTime);
         return;
     }
     dragonL(depth - 1);
-    car.turnLeft(500, turnSpeed);
+    car.turnLeft(turnTime);
     dragonR(depth - 1);
 }
 
 void dragonR(int depth) {
     if (0 == depth) {
-        car.moveForwards(500, moveSpeed);
+        car.moveForwards(moveTime);
         return;
     }
     dragonL(depth - 1);
-    car.turnRight(500, turnSpeed);
+    car.turnRight(turnTime);
     dragonR(depth - 1);
 }
 
 void dragon(int depth) {
     dragonL(depth);
-    car.turnLeft(500, turnSpeed);
+    car.turnLeft(turnTime);
     dragonR(depth);
 }
-

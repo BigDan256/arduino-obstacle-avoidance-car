@@ -27,7 +27,7 @@ bool Wheel::begin(int enAPin_, int in1Pin_, int in2Pin_) {
   pinMode(in2Pin, OUTPUT);
   analogWrite(enAPin, 0);
   
-  return false;
+  return true;
 }
 
 void Wheel::setForwards(void) {
@@ -36,8 +36,8 @@ void Wheel::setForwards(void) {
 }
 
 void Wheel::setBackwards(void) {
-  digitalWrite(in1Pin, HIGH);
-  digitalWrite(in2Pin, LOW);
+  digitalWrite(in1Pin, LOW);
+  digitalWrite(in2Pin, HIGH);
 }
 
 void Wheel::setSpeed(int speed) {

@@ -79,7 +79,7 @@ float ObstacleAvoidanceCar::getDistanceCM(void) {
 
 
 bool ObstacleAvoidanceCar::beginWheels(uint8_t enAPin, uint8_t in1Pin, uint8_t in2Pin, uint8_t in3Pin, uint8_t in4Pin, uint8_t enBPin) {
-  return leftWheel.begin(enAPin, in1Pin, in2Pin) && rightWheel.begin(enBPin, in4Pin, in3Pin);
+  return leftWheel.begin(enAPin, in2Pin, in1Pin) && rightWheel.begin(enBPin, in4Pin, in3Pin);
 }
 
 
@@ -136,7 +136,7 @@ void ObstacleAvoidanceCar::moveBackwards(void) {
 void ObstacleAvoidanceCar::turnLeft(int time, int speed) {
   // Set the new movement direction
   leftWheel.setBackwards();
-  rightWheel.setBackwards();
+  rightWheel.setForwards();
 
   move(time, speed);
 }
@@ -150,7 +150,7 @@ void ObstacleAvoidanceCar::turnLeft(void) {
 
 void ObstacleAvoidanceCar::turnRight(int time, int speed) {
   // Set the new movement direction
-  leftWheel.setBackwards();
+  leftWheel.setForwards();
   rightWheel.setBackwards();
 
   move(time, speed);

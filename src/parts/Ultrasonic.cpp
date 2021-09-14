@@ -34,7 +34,13 @@ unsigned long Ultrasonic::readDistanceRaw(void) {
   delayMicroseconds(10);
   digitalWrite(triggerPin, LOW);
 
-  return pulseIn(echoPin, HIGH);
+  sum -= buffer[ptr];
+  buffer[ptr] = pulseIn(echoPin, HIGH);
+  sum += buffer[ptr];
+
+  ptr = (ptr + 1) & 15;
+
+  return sum >> 1;
 }
 
 float Ultrasonic::readDistanceCM(void) {

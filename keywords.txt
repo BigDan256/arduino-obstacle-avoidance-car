@@ -1,0 +1,67 @@
+#######################################
+# Syntax Coloring Map For ObstacleAvoidanceCar
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+ObstacleAvoidanceCar	KEYWORD1
+Remote	KEYWORD1
+Servo	KEYWORD1
+Ultrasonic	KEYWORD1
+Wheel	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+begin	KEYWORD2
+beginRemote	KEYWORD2
+beginServo	KEYWORD2
+beginUltrasonic	KEYWORD2
+beginWheels	KEYWORD2
+getDistanceCM	KEYWORD2
+getRemoteKey	KEYWORD2
+lookLeft	KEYWORD2
+lookRight	KEYWORD2
+lookStraight	KEYWORD2
+move	KEYWORD2
+moveBackwards	KEYWORD2
+moveForwards	KEYWORD2
+setSpeed	KEYWORD2
+setTimeStep	KEYWORD2
+turnLeft	KEYWORD2
+turnRight	KEYWORD2
+
+#######################################
+# Instances (KEYWORD2)
+#######################################
+
+remote	KEYWORD2
+servo	KEYWORD2
+ultrasonic	KEYWORD2
+leftWheel	KEYWORD2
+rightWheel	KEYWORD2
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+
+KEY_UP	LITERAL1
+KEY_DOWN	LITERAL1
+KEY_LEFT	LITERAL1
+KEY_RIGHT	LITERAL1
+KEY_OK	LITERAL1
+KEY_0	LITERAL1
+KEY_1	LITERAL1
+KEY_2	LITERAL1
+KEY_3	LITERAL1
+KEY_4	LITERAL1
+KEY_5	LITERAL1
+KEY_6	LITERAL1
+KEY_7	LITERAL1
+KEY_8	LITERAL1
+KEY_9	LITERAL1
+KEY_STAR	LITERAL1
+KEY_HASH	LITERAL1

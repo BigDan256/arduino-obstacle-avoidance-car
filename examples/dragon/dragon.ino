@@ -20,7 +20,6 @@ int moveSpeed = 127;
 void dragon(int depth); // The movement pattern
 
 void setup() {
-  // Uncomment to attach modules to the car
   car.beginRemote(signalPin);
   car.beginWheels(enAPin, in1Pin, in2Pin, in3Pin, in4Pin, enBPin);
 }

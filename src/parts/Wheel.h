@@ -35,15 +35,24 @@ public:
    */
   bool begin(int enAPin, int in1Pin, int in2Pin);
 
+  /*!
+   * @brief Toggle the direction of the motor
+   */
   void setForwards(void);
 
+  /*!
+   * @brief Toggle the direction of the motor
+   */
   void setBackwards(void);
 
-  void setSpeed(int);
+  /*!
+   * @brief Set the duty cycle of the motor
+   */
+  void setSpeed(int speed);
 
 private:
 
-  int enAPin, in1Pin, in2Pin;
+  uint8_t enAPin, in1Pin, in2Pin;
 
 };
 

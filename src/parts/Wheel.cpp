@@ -23,21 +23,25 @@ bool Wheel::begin(int enAPin_, int in1Pin_, int in2Pin_) {
   in1Pin = in1Pin_;
   in2Pin = in2Pin_;
 
-  //TODO
-
+  pinMode(in1Pin, OUTPUT);
+  pinMode(in2Pin, OUTPUT);
+  analogWrite(enAPin, 0);
+  
   return false;
 }
 
 void Wheel::setForwards(void) {
-  //TODO
+  digitalWrite(in1Pin, HIGH);
+  digitalWrite(in2Pin, LOW);
 }
 
 void Wheel::setBackwards(void) {
-  //TODO
+  digitalWrite(in1Pin, HIGH);
+  digitalWrite(in2Pin, LOW);
 }
 
-void Wheel::setSpeed(int) {
-  //TODO
+void Wheel::setSpeed(int speed) {
+  analogWrite(enAPin, speed);
 }
 
 } // /namespace

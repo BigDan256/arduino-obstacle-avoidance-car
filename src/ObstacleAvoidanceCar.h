@@ -48,7 +48,7 @@ public:
    *
    * @return true if successful
    */
-  bool beginRemote(int signalPin);
+  bool beginRemote(uint8_t signalPin);
 
   /*!
    * @brief Fetch the most recent remote key
@@ -64,7 +64,7 @@ public:
    *
    * @return true if successful
    */
-  bool beginServo(int pulsePin);
+  bool beginServo(uint8_t pulsePin);
 
   /*!
    * @brief Look to the left
@@ -90,7 +90,7 @@ public:
    *
    * @return true if successful
    */
-  bool beginUltrasonic(int triggerPin, int echoPin);
+  bool beginUltrasonic(uint8_t triggerPin, uint8_t echoPin);
 
   /*!
    * @brief Measure the distance
@@ -106,7 +106,7 @@ public:
    *
    * @return true if successful
    */
-  bool beginWheels(int enAPin, int in1Pin, int in2Pin, int in3Pin, int in4Pin, int enBPin);
+  bool beginWheels(uint8_t enAPin, uint8_t in1Pin, uint8_t in2Pin, uint8_t in3Pin, uint8_t in4Pin, uint8_t enBPin);
 
   /*!
    * @brief Start the motors moving

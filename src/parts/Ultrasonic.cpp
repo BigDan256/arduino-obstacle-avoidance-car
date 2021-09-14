@@ -20,7 +20,7 @@
 
 namespace ObstacleAvoidanceCarParts {
 
-bool Ultrasonic::begin(int triggerPin_, int echoPin_) {
+bool Ultrasonic::begin(uint8_t triggerPin_, uint8_t echoPin_) {
   triggerPin = triggerPin_;
   echoPin    = echoPin_;
 

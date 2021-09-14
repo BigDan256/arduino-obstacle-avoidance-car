@@ -40,7 +40,7 @@ bool ObstacleAvoidanceCar::begin(void) {
 }
 
 
-bool ObstacleAvoidanceCar::beginRemote(int signalPin) {
+bool ObstacleAvoidanceCar::beginRemote(uint8_t signalPin) {
   return remote.begin(signalPin);
 }
 
@@ -50,7 +50,7 @@ int ObstacleAvoidanceCar::getRemoteKey(void) {
 
 
 
-bool ObstacleAvoidanceCar::beginServo(int pulsePin) {
+bool ObstacleAvoidanceCar::beginServo(uint8_t pulsePin) {
   return servo.begin(pulsePin);
 }
 
@@ -68,7 +68,7 @@ void ObstacleAvoidanceCar::lookStraight(void) {
 
 
 
-bool ObstacleAvoidanceCar::beginUltrasonic(int triggerPin, int echoPin) {
+bool ObstacleAvoidanceCar::beginUltrasonic(uint8_t triggerPin, uint8_t echoPin) {
   return ultrasonic.begin(triggerPin, echoPin);
 }
 
@@ -78,7 +78,7 @@ float ObstacleAvoidanceCar::getDistanceCM(void) {
 
 
 
-bool ObstacleAvoidanceCar::beginWheels(int enAPin, int in1Pin, int in2Pin, int in3Pin, int in4Pin, int enBPin) {
+bool ObstacleAvoidanceCar::beginWheels(uint8_t enAPin, uint8_t in1Pin, uint8_t in2Pin, uint8_t in3Pin, uint8_t in4Pin, uint8_t enBPin) {
   return leftWheel.begin(enAPin, in1Pin, in2Pin) && rightWheel.begin(enBPin, in4Pin, in3Pin);
 }
 

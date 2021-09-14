@@ -18,7 +18,7 @@
 
 namespace ObstacleAvoidanceCarParts {
 
-bool Servo::begin(int pulsePin) {
+bool Servo::begin(uint8_t pulsePin) {
   servo.attach(pulsePin);
 
   return servo.attached();

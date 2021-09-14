@@ -33,7 +33,7 @@ public:
    * 
    * @return true if successful
    */
-  bool begin(int pulsePin);
+  bool begin(uint8_t pulsePin);
 
   /*!
    * @brief Turn the servo to look in a specified direction
@@ -51,7 +51,7 @@ public:
 
 private:
 
-  int pulsePin;
+  uint8_t pulsePin;
   ::Servo servo;
 
 };

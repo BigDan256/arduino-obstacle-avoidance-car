@@ -32,7 +32,7 @@ public:
    * 
    * @return true if successful
    */
-  bool begin(int triggerPin, int echoPin);
+  bool begin(uint8_t triggerPin, uint8_t echoPin);
 
   /*!
    * @brief Read the ultrasonic distance in us
@@ -51,8 +51,8 @@ public:
 
 private:
 
-  int triggerPin;
-  int echoPin;
+  uint8_t triggerPin;
+  uint8_t echoPin;
 
 };
 

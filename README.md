@@ -6,7 +6,11 @@ A small library targetting the cheap obstacle avoidance car kit. I wrote this to
 
 ## ObstacleAvoidanceCar API Reference
 
-#### bool beginRemote(int signalPin);
+#### bool begin()
+
+Returns true on success.
+
+#### bool beginRemote(int signalPin)
 
 | Parameter   | Type  | Description                |
 | :---------- | :---- | :----------------------------------------------- |
@@ -15,7 +19,11 @@ A small library targetting the cheap obstacle avoidance car kit. I wrote this to
 
 Returns true on success.
 
-#### bool beginServo(int pulsePin);
+#### int getRemoteKey()
+
+Returns the next pressed remote key 
+
+#### bool beginServo(int pulsePin)
 
 | Parameter  | Type  | Description                |
 | :--------- | :---- | :------------------------------------------------- |
@@ -24,7 +32,13 @@ Returns true on success.
 
 Returns true on success.
 
-#### bool beginUltrasonic(int triggerPin, int echoPin);
+#### lookLeft()
+
+#### lookRight()
+
+#### lookStraight()
+
+#### bool beginUltrasonic(int triggerPin, int echoPin)
 
 | Parameter    | Type  | Description                |
 | :----------- | :---- | :------------------------------------------------ |
@@ -35,7 +49,9 @@ Returns true on success.
 
 Returns true on success.
 
-#### bool beginWheels(int enAPin, int in1Pin, int in2Pin, int in3Pin, int in4Pin, int enBPin);
+#### float getDistanceCM()
+
+#### bool beginWheels(int enAPin, int in1Pin, int in2Pin, int in3Pin, int in4Pin, int enBPin)
 
 | Parameter | Type  | Description                |
 | :-------- | :---- | :--------------------------------------------------- |
@@ -54,23 +70,27 @@ Returns true on success.
 
 Returns true on success.
 
-#### void moveForwards(int time);
+#### move(*[int time[, int speed]]*)
+
+#### moveForwards(*[int time[, int speed]]*)
 
 Start the wheels moving forwards.
 
-#### void moveBackwards(int time);
+#### moveBackwards(*[int time[, int speed]]*)
 
 Start the motors moving backwards.
 
-#### void turnLeft(int time);
+#### turnLeft(*[int time[, int speed]]*)
 
 Start the motors turning left on the spot.
 
-#### void turnRight(int time);
+#### turnRight(*[int time[, int speed]]*)
 
 Start the motors turning right on the spot
 
-#### void stopMoving(void);
+#### setSpeed(int speed)
+
+#### setTimeStep(int time)
 
 Stop the motors moving
 
@@ -91,8 +111,10 @@ Stop the motors moving
   
 ## Installation
 
-Copy the project to your %USERPROFILE%\Documents\Arduino\Libraries folder.
+Copy the project to your "%USERPROFILE%\Documents\Arduino\Libraries" folder.
+
+Alternative, install through library manager.
 
 Examples will then appear under File->Examples->ObstacleAvoidanceCar menu in your Arduino IDE.
 
-Alternative, install through library manager.
+You can also add references to your sketch via Sketch->Include Library.
